@@ -1,0 +1,79 @@
+div.countdownCircle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 10em;
+    height: 10em;
+    max-width: 10em;
+    max-height: 10em;
+    border-radius: 50%;
+    position: relative;
+    animation: none;
+    flex-grow: 1;
+}
+div.countdownCircle::before {
+    content: '';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background-color: var(--bg);
+    border-radius: 50%;
+}
+div.countdownCircleExpand {
+    animation: countdownCircleExpand 10s ease-in-out forwards;
+}
+
+div.countdownCircle * {
+    z-index: 100;
+    line-height: 1;
+}
+
+div.countdownCircle div.text {
+    font-size: 1.5em;
+}
+
+
+@keyframes countdownCircleExpand {
+    
+    to {
+        font-size: min(9vh, 9vw);
+    }
+
+}
+
+
+@media (max-width: 940px) {
+
+    div.countdownCircle {
+        font-size: 0.7em;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    div.countdownCircle {
+        font-size: 1em;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    div.countdownCircle {
+        font-size: 0.7em;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    div.countdownCircle {
+        font-size: 0.5em;
+    }
+
+}

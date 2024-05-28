@@ -1,0 +1,84 @@
+div.newYear {
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+    max-width: 1000px;
+    padding: 2em;
+}
+div.newYear:has(div.countdownCircleExpand) {
+    padding: 0;
+}
+
+
+div.newYear div.headingSection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+}
+
+
+div.newYear div.countdownSection {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+}
+
+
+div.newYear div.card {
+    background-color: var(--bg-2);
+    padding: 1em;
+    border-radius: 1em;
+}
+
+div.newYear div.sep {
+    width: 100%;
+    height: .1em;
+    border-radius: 1em;
+    background-color: var(--sep);
+}
+
+div.newYear .textTitle {
+    font-size: 2em;
+}
+
+div.newYear .textBig {
+    font-size: 3em;
+}
+
+div.newYear .textSecondary {
+    color: var(--text-2);
+}
+
+div.newYear .hidden {
+    display: none !important;
+}
+
+
+@media (max-width: 700px) {
+
+    div.newYear div.countdownSection {
+        flex-wrap: wrap;
+    }
+
+}
+
+@media (max-width: 530px) {
+
+    div.newYear div.headingSection {
+        font-size: 0.7em;
+    }
+
+    div.newYear {
+        gap: 2em;
+    }
+
+}
+
+@media (max-width: 420px) {
+
+    div.newYear div.headingSection {
+        font-size: 0.5em;
+    }
+
+}

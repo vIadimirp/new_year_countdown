@@ -1,0 +1,137 @@
+div.newYearCame {
+    position: relative;
+    overflow: hidden;
+    font-size: min(calc(90vh / 4), calc(90vw / 4));
+    width: 100%;
+    height: 1em;
+    opacity: 0;
+    animation: newYearCameAnimation 3s linear forwards,
+               newYearCameAnimation2 1s linear 7.1s forwards;
+}
+/* div.newYearCame::before,
+div.newYearCame::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: calc((1.5em - 0.77em) * 0.5);
+    z-index: 100;
+}
+div.newYearCame::before {
+    background: linear-gradient(var(--bg) 0%, transparent 100%);
+    top: -2px;
+}
+div.newYearCame::after {
+    background: linear-gradient(transparent 0%, var(--bg) 100%);
+    bottom: -2px;
+} */
+
+div.newYearCame div.previousYear,
+div.newYearCame div.thisYear {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 0.77;
+}
+
+div.newYearCame div.previousYear {
+    animation: previousYearAnimation 5s ease-in-out 3s forwards;
+}
+
+div.newYearCame div.thisYear {
+    /* display: none; */
+    opacity: 0;
+    transform: translate(-50%, -170%);
+    animation: thisYearAnimation 5s ease-in-out 3s forwards;
+}
+
+div.fireworkContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+div.firework {
+    position: absolute;
+    background-color: var(--firework);
+    border-radius: 50%;
+    animation: fireworkAnimation 2s ease-out 7s forwards;
+    opacity: 0.5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+}
+
+div.newYearCame div.happyNewYearText {
+    font-size: .2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% + 3em));
+    opacity: 0;
+    animation: happyNewYearTextAnimation 2s ease-in-out 8s forwards;
+    white-space: nowrap;
+}
+
+
+div.newYearCame .textSecondary {
+    color: var(--text-2);
+}
+
+
+@keyframes previousYearAnimation {
+
+    to {
+        transform: translate(-50%, 70%);
+        opacity: 0;
+    }
+    
+}
+
+@keyframes thisYearAnimation {
+
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+
+}
+
+@keyframes fireworkAnimation {
+
+    to {
+        width: max(200vh, 200vw);
+        height: max(200vh, 200vw);
+        opacity: 0;
+        display: none;
+    }
+
+}
+
+@keyframes newYearCameAnimation {
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+@keyframes newYearCameAnimation2 {
+
+    to {
+        overflow: visible;
+    }
+
+}
+
+@keyframes happyNewYearTextAnimation {
+
+    to {
+        opacity: 1;
+    }
+
+}

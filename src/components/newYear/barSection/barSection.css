@@ -1,0 +1,88 @@
+div.bar {
+    width: 100%;
+    height: 0.7em;
+    border-radius: .5em;
+    position: relative;
+    overflow: hidden;
+}
+div.barGray {
+    background-color: var(--bar-bg);
+}
+
+div.bar div.barLeft {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+div.barGray div.barLeft {
+    background-color: var(--bar);
+}
+
+
+div.barSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+}
+
+div.barSection div.text {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+div.barSection div.nowText {
+    display: none;
+    text-align: center;
+}
+
+div.barSection div.percentText span:last-child {
+    text-align: right;
+}
+
+
+@media (max-width: 940px) {
+
+    div.barSection div.nowText {
+        display: block;
+    }
+
+    div.barSection div.datesText span.now {
+        display: none;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    div.barSection {
+        font-size: 0.8em;
+    }
+
+}
+
+@media (max-width: 420px) {
+
+    div.barSection {
+        font-size: 0.7em;
+    }
+
+}
+
+@media (max-width: 370px) {
+
+    div.barSection div.percentText {
+        flex-direction: column;
+        gap: 0.5em;
+        margin-top: 0.5em;
+    }
+
+    div.barSection div.percentText span {
+        text-align: center !important;
+    }
+
+}
